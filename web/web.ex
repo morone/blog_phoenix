@@ -22,7 +22,7 @@ defmodule BlogPhoenix.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
     end
   end
 
@@ -32,7 +32,7 @@ defmodule BlogPhoenix.Web do
 
       alias BlogPhoenix.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       import BlogPhoenix.Router.Helpers
       import BlogPhoenix.Gettext
@@ -67,7 +67,7 @@ defmodule BlogPhoenix.Web do
 
       alias BlogPhoenix.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
       import BlogPhoenix.Gettext
     end
   end

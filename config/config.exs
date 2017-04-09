@@ -5,12 +5,15 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :blog_phoenix,
+  ecto_repos: [BlogPhoenix.Repo]
+
 # Configures the endpoint
 config :blog_phoenix, BlogPhoenix.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
-  secret_key_base: "Ym6lQcfn/IVetGlQZwIlMZj6Dazx7m8cFjAfVJR5IbOD1uu+Y59kdgpg7T7It98a",
-  render_errors: [accepts: ~w(html json)],
+  secret_key_base: "hUVI8MIuAviD356yrNk6wJ+CD66tMWW4rwhtvAVWIrWm2jMxeWIE/j1NgebxYLYp",
+  render_errors: [view: BlogPhoenix.ErrorView, accepts: ~w(html json)],
   pubsub: [name: BlogPhoenix.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -22,8 +25,3 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Configure phoenix generators
-config :phoenix, :generators,
-  migration: true,
-  binary_id: false

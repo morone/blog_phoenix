@@ -30,10 +30,13 @@ defmodule BlogPhoenix.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
 
+  # The session will be stored in the cookie and signed,
+  # this means its contents can be read but not tampered with.
+  # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
     key: "_blog_phoenix_key",
-    signing_salt: "28eygmVD"
+    signing_salt: "6Ty1YNHr"
 
   plug BlogPhoenix.Router
 end
